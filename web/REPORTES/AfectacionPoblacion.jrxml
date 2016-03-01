@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AfectacionPoblacion" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8ce85206-52e0-4b7a-bc57-4e44654ff986">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="testbdd"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idevento" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT *
+FROM rptpoblacionv where idevento = $P{idevento}]]>
+	</queryString>
+	<field name="idevento" class="java.lang.String"/>
+	<field name="idtipoafectacion" class="java.lang.String"/>
+	<field name="tipoafectacion" class="java.lang.String"/>
+	<field name="hombres" class="java.math.BigDecimal"/>
+	<field name="mujeres" class="java.math.BigDecimal"/>
+	<field name="ninos" class="java.math.BigDecimal"/>
+	<field name="ninas" class="java.math.BigDecimal"/>
+	<field name="personas" class="java.math.BigDecimal"/>
+	<field name="hogares" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="23" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-11" y="4" width="791" height="18" forecolor="#006699" backcolor="#006699" uuid="a3b74426-afb4-438c-9265-3d1a0ae545e4"/>
+				<staticText>
+					<reportElement x="11" y="0" width="190" height="18" forecolor="#FFFFFF" uuid="244bc206-0c82-4039-b35c-73e477ef8675"/>
+					<textElement textAlignment="Left">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[AFECTACIÓN POBLACIÓN]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="6" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="176" y="0" width="100" height="20" uuid="890b743c-9fc6-485b-bfda-be70aef82d8b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[HOMBRES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="74362c04-4cab-487b-9ff4-c52a4bfad0f8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPO AFECTACIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="276" y="0" width="100" height="20" uuid="c73b6b8e-283a-4199-a799-90132516fe79"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[MUJERES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="376" y="0" width="100" height="20" uuid="14e335a2-f106-4553-a212-5ef0909b2db7"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NIÑOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="476" y="0" width="100" height="20" uuid="145562f7-9913-478f-96b1-5197eef7aa56"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NIÑAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="576" y="0" width="100" height="20" uuid="1ad68be4-f3ff-4ac5-9d4a-19a4bfda32c1"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PERSONAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="676" y="0" width="100" height="20" uuid="bb533741-6474-4e97-9817-68130ac2b324"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[HOGARES]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="176" y="0" width="100" height="20" uuid="e2f1c59d-da25-4b52-9168-781765e5237a"/>
+				<textFieldExpression><![CDATA[$F{hombres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="176" height="20" uuid="b30b9f84-4f25-46d8-8651-bbc340f92862"/>
+				<textFieldExpression><![CDATA[$F{tipoafectacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="276" y="0" width="100" height="20" uuid="51e2dbcf-7dfe-4e63-a5b9-6b35ecbf0012"/>
+				<textFieldExpression><![CDATA[$F{mujeres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="376" y="0" width="100" height="20" uuid="3e0759d3-abf0-4e45-a6f1-da57319e2351"/>
+				<textFieldExpression><![CDATA[$F{ninos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="476" y="0" width="100" height="20" uuid="fa0a4744-5d05-48a3-90e9-6699299e5eed"/>
+				<textFieldExpression><![CDATA[$F{ninas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="576" y="0" width="100" height="20" uuid="e4dc9665-97d0-4a31-bf27-3dd04cba4598"/>
+				<textFieldExpression><![CDATA[$F{personas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="676" y="0" width="100" height="20" uuid="e68e3de3-465e-4057-bdbb-d56d29ff3bd1"/>
+				<textFieldExpression><![CDATA[$F{hogares}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="5" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="4" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="4" splitType="Stretch"/>
+	</summary>
+</jasperReport>

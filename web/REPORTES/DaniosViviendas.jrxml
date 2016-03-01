@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DaniosViviendas" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="feb82358-f23f-4505-be7a-1550f3521410">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="dml2aWVuZGEgLDE1LDE1LGJjODAzYWMzLTQ1ZDQtNGIyZi1hYWNlLWFkNzcyMDQxMDI2NDs="/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="testbdd"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idevento" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT *
+FROM vivienda
+WHERE 
+	 vivienda.idevento = $P{idevento}]]>
+	</queryString>
+	<field name="sindano" class="java.lang.String"/>
+	<field name="temporalnh" class="java.lang.String"/>
+	<field name="idevento" class="java.lang.String"/>
+	<field name="danoparcialh" class="java.lang.String"/>
+	<field name="danototalnh" class="java.lang.String"/>
+	<field name="totalv" class="java.lang.String"/>
+	<field name="observacion" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="27" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-11" y="4" width="791" height="18" forecolor="#006699" backcolor="#006699" uuid="ca45fe9a-c80d-41b8-a14f-f0b38ae62112"/>
+				<staticText>
+					<reportElement x="11" y="0" width="190" height="18" forecolor="#FFFFFF" uuid="a019c8e2-7bf2-4e59-b48a-4a2d9edbbc33"/>
+					<textElement textAlignment="Left">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[DAÑOS EN VIVIENDAS]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="6" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="6" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="86" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="41" width="179" height="19" uuid="f527dfb8-0750-4683-8969-28ea773a2562"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VIVIENDAS AFECTADAS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="180" y="41" width="100" height="19" uuid="11f2fb91-cd08-4040-ae2e-cb0c378ff98d"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{sindano}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="2" width="100" height="20" uuid="810c2dc4-3430-43c1-b8a0-b20c54543c7e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SIN DAÑO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="41" width="100" height="19" uuid="d48e2c27-e0c9-451f-866c-b1b80a9c21af"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{temporalnh}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="0" width="100" height="39" uuid="23793baf-9603-42ca-9b8d-5ba187349991"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TEMPORALMENTE NO HABITABLES]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="380" y="41" width="100" height="19" uuid="1f9ec5a8-f6be-4ef0-9084-4445bf63fa01"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{danoparcialh}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="380" y="2" width="100" height="37" uuid="6f6ff58a-a539-4754-ac0e-ae7a0194defc"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DAÑO PARCIAL HABITABLES]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="480" y="39" width="100" height="21" uuid="38df6345-3392-448b-8e90-99b53f7efb5b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{danototalnh}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="480" y="0" width="100" height="39" uuid="e3bf1458-7542-476a-b3d0-cafb59d471ad"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DAÑO TOTAL NO HABITABLES]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="580" y="60" width="100" height="19" uuid="5645b414-7d02-4d23-add0-efb0a1370ee6"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{totalv}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="60" width="178" height="19" uuid="7c7980a4-1014-43d5-8abd-34ea11f58fe2"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL VIVIENDAS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="580" y="41" width="100" height="19" uuid="e5b96aa0-9e8c-4c34-b783-c4fd24d38f4b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{observacion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="580" y="2" width="100" height="18" uuid="5e8f4c09-1d2e-4cec-8451-87f5c0320942"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[OBSERVACIÓN]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="20" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="21" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="17" splitType="Stretch"/>
+	</summary>
+</jasperReport>

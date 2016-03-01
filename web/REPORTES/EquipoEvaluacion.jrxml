@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-02-25T15:47:16 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EquipoEvaluacion" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2257092b-03d1-4530-983e-71d6afdafbd7">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="testbdd"/>
+	<parameter name="idevento" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT *
+FROM v_rptequipoev where idevento = $P{idevento}]]>
+	</queryString>
+	<field name="idevento" class="java.lang.String"/>
+	<field name="idtipopoblacion" class="java.lang.String"/>
+	<field name="idroltecnico" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="organizacion" class="java.lang.String"/>
+	<field name="telefono" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="roltecnico" class="java.lang.String"/>
+	<field name="tipopoblacion" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="23" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-11" y="4" width="791" height="18" forecolor="#006699" backcolor="#006699" uuid="520aafbb-24ce-4844-9e84-3505a701844b"/>
+				<staticText>
+					<reportElement x="11" y="0" width="489" height="18" forecolor="#FFFFFF" uuid="1be6cdda-9cb4-40c2-855e-245ee46407ae"/>
+					<textElement textAlignment="Left">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[EQUIPO DE EVALUACIÓN]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="1" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="56a97c8a-f2c5-4d26-8598-13789c602b6f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="200" height="30" uuid="4bdee0e0-4f0f-426f-83c0-db2a9a98e68b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORGANIZACIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="100" height="30" uuid="7703bbca-abd3-446c-bcc2-81fe7b13f62b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELÉFONO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="0" width="180" height="30" uuid="5f4d73b5-2e5c-4636-a43b-f66e938d0350"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[E-MAIL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="580" y="0" width="100" height="30" uuid="b70e9f34-b897-4cdf-b331-1f5f4d077057"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ROL TECNICO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="680" y="0" width="100" height="30" uuid="589a8938-2a3a-4f47-8144-1759ad94c261"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPO DE PERSONAS EVALUADAS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="6651aaf0-f871-4ca8-8e3e-f20efff48600"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="200" height="20" uuid="5bb9de10-94bd-4f76-95b5-ca70e49c253d"/>
+				<textFieldExpression><![CDATA[$F{organizacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="100" height="20" uuid="8e098991-90ec-4bed-8daa-3c9196880e35"/>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="180" height="20" uuid="c3e6ac1e-4e69-4b5f-ae42-e3105ea4e0a6"/>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="580" y="0" width="100" height="20" uuid="f87a8114-043f-443e-8eec-4bffee0924b0"/>
+				<textFieldExpression><![CDATA[$F{roltecnico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="680" y="0" width="100" height="20" uuid="3a7a1f9a-812f-4702-bae1-d6c36c17afd4"/>
+				<textFieldExpression><![CDATA[$F{tipopoblacion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="1" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="1" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="1" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</summary>
+</jasperReport>

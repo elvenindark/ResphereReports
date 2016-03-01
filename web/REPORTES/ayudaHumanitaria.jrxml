@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-02-29T16:18:29 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ayudaHumanitaria" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9379f84f-01e2-4d3a-be80-81a889ee08be">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="testbdd"/>
+	<parameter name="idevento" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT *
+FROM organizacion where idevento = $P{idevento}]]>
+	</queryString>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="sector" class="java.lang.String"/>
+	<field name="contacto" class="java.lang.String"/>
+	<field name="idevento" class="java.lang.String"/>
+	<field name="idorganizacion" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="23" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-11" y="4" width="791" height="18" forecolor="#006699" backcolor="#006699" uuid="ba96a0a8-c0f7-4dde-9960-ec24e2585f71"/>
+				<staticText>
+					<reportElement x="11" y="1" width="489" height="18" forecolor="#FFFFFF" uuid="e955a340-5a76-467a-a427-d159317c57e6"/>
+					<textElement textAlignment="Left">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[SITUACIÓN DE AYUDA HUMANITARIA]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="1" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="65" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement x="0" y="26" width="280" height="30" uuid="8870398e-aa6b-4e36-9a6b-d7648ad3a1a1"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORGANIZACIÓN/INSTITUCIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="26" width="250" height="30" uuid="df2cb307-1018-4cef-91bd-bf0cc5b886a2"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECTOR DE LA INTERVENCIÓN (SALUD, AGUA, NUTRICIÓN, ETC.)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="580" y="26" width="100" height="30" uuid="44290f01-a448-4b33-8b75-43d3e787c7d0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONTACTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="6" width="780" height="20" uuid="3fb7c420-d617-4b71-b604-698793a948c1"/>
+				<box bottomPadding="1"/>
+				<textElement textAlignment="Left">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORGANIZACIONES DE SOCORRO/DESARROLLO QUE ESTÁN FUNCIONANDO EN LA COMUNIDAD]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="280" height="20" uuid="c332ba3c-92f4-448b-87fa-1a633fd8a334"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="0" width="200" height="20" uuid="ef366d3c-1d7a-442c-bbaf-48575d35f2ad"/>
+				<textFieldExpression><![CDATA[$F{sector}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="580" y="0" width="100" height="20" uuid="b4b77935-78f1-4da6-af8e-7090c170b9af"/>
+				<textFieldExpression><![CDATA[$F{contacto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="1" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="1" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</summary>
+</jasperReport>

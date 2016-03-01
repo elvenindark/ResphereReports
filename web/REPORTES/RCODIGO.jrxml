@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="350d7599-41bd-452f-a4ef-59eb853db9b6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="CODIGO" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     clientes."idcliente" AS clientes_idcliente,
+     clientes."nombres" AS clientes_nombres,
+     clientes."apellidos" AS clientes_apellidos,
+     clientes."direccion" AS clientes_direccion,
+     clientes."correo" AS clientes_correo
+FROM
+     "public"."clientes" clientes
+WHERE
+	idcliente=$P{CODIGO}]]>
+	</queryString>
+	<field name="clientes_idcliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="clientes_nombres" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="clientes_apellidos" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="clientes_direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="clientes_correo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="118" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="8" width="555" height="1" uuid="bf1c4466-3622-45bc-8e71-712bd27b783e"/>
+			</line>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="107" width="555" height="1" uuid="5bf87438-8f70-44d8-a8d5-4772731594dc"/>
+			</line>
+			<staticText>
+				<reportElement x="75" y="23" width="424" height="35" uuid="cd68f32a-2f30-4c45-ac6f-9c68025a9ccb"/>
+				<textElement textAlignment="Center">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE CON PARAMETROS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="185" y="58" width="183" height="34" uuid="2f488e10-a28c-4dc6-8d72-712f2ccf3a52"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[POSTGRESQL]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="281" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="49" y="46" width="467" height="165" uuid="26ad418d-a62c-47b7-b51b-e2afb89404dc"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="101" y="154" width="139" height="20" uuid="cf752ae8-2caa-4093-b2f3-a5f4ad9baa03"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CORREO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="240" y="74" width="245" height="20" uuid="cafdf0b9-90b0-4013-9e77-8b21947acdbd"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clientes_idcliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="134" width="245" height="20" uuid="19e2abe1-44c5-4447-b9e1-53e2d6d4c7b6"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clientes_direccion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="101" y="94" width="139" height="20" uuid="893312cd-f200-4d44-8c0f-3a6f0a2f32c0"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRES:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="240" y="154" width="245" height="20" uuid="ce9a54e3-f63d-4513-849b-fe7094330d96"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clientes_correo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="101" y="74" width="139" height="20" uuid="b642718f-7a58-4d4b-a87d-64f20dfa37a6"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IDCLIENTE:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="240" y="114" width="245" height="20" uuid="c10b87d1-bdbe-4ed2-97e7-cf0b00e60823"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clientes_apellidos}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="101" y="114" width="139" height="20" uuid="5934fc7f-6b06-4335-8fcb-dc8961aff897"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APELLIDOS:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="240" y="94" width="245" height="20" uuid="a19254ec-8efb-41a3-be57-547630d57bee"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clientes_nombres}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="101" y="134" width="139" height="20" uuid="4e7342ad-0675-41a5-a4d0-d71797b5f7d5"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIRECCION:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="268" y="14" width="100" height="20" uuid="2a874fae-c912-4810-b08f-6f32d881c10f"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CODIGO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="101" y="14" width="165" height="20" uuid="5ebabb69-fbc6-4cb4-9f54-5769e775c9f6"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CODIGO DEL CLIENTE:]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="26" splitType="Stretch">
+			<textField evaluationTime="Report" pattern="" isBlankWhenNull="false">
+				<reportElement key="textField" x="516" y="6" width="36" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="d29448e9-f6a8-4a11-86dd-6e3a6cb5ef72"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["" + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField" x="342" y="6" width="170" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="072e8e58-7d96-4eb2-94fc-17519e31ecaa"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER} + " of "]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField" x="1" y="6" width="209" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="d358dd34-7398-444d-af66-58d2964f7447"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

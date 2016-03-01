@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>       
+    </h:head>
+    <h:body>      
+            <p:outputLabel>BUSQUEDA DE EVENTOS</p:outputLabel>
+            <br/><br/>
+            
+            <h:form>                
+                <p:fieldset>
+                    <h:outputLabel value="Evento:"></h:outputLabel>  
+                        <h:selectOneMenu id="eventotipo" value="#{provinciasMB.ideventotipo}" 
+                                             required="false" style="width: 14%">
+                                <f:selectItem itemLabel="Seleccione evento" itemValue="-1"></f:selectItem>
+                                <f:selectItems value="#{provinciasMB.eventotipos}" var="eventos"
+                                               itemLabel="#{eventos.eventotipo}" itemValue="#{eventos.eventotipo}">
+                                </f:selectItems>
+                                <f:ajax event="change" listener="#{provinciasMB.searchEventos}" render="eventoTable" execute="@this"/>
+                            </h:selectOneMenu>  
+                            <h:outputLabel value="Provincia:"></h:outputLabel>
+                            <h:selectOneMenu value="#{provinciasMB.idprovincia}" style="width: 15%" 
+                                             required="false" id="provincias">
+                                <f:selectItem  itemValue="-1" itemLabel="Seleccione provincia"></f:selectItem>
+                                <f:selectItems value="#{provinciasMB.provincias}" var="provincia"
+                                               itemValue="#{provincia.provincia}" itemLabel="#{provincia.provincia}" >
+                                </f:selectItems>
+                                <f:ajax event="change" listener="#{provinciasMB.searchCanton}" render="cantones eventoTable" execute="@this"/>
+                            </h:selectOneMenu>                            
+                            <h:outputLabel value="Canton:"></h:outputLabel>
+                            <h:selectOneMenu value="#{provinciasMB.idcanton}" style="width: 15%" 
+                                             required="false" id="cantones" >
+                                <f:selectItem itemLabel="Seleccione canton" itemValue="-1" ></f:selectItem>
+                                <f:selectItems value="#{provinciasMB.cantonesString}" var="canton"
+                                               itemLabel="#{canton}" itemValue="#{canton}">
+                                </f:selectItems>
+                                <f:ajax event="change" listener="#{provinciasMB.searchCantones}" render="eventoTable" execute="@this"/>
+                            </h:selectOneMenu>                       
+                            <h:outputLabel id="finicial" value="Fecha desde:" ></h:outputLabel>
+                            <p:calendar required="false" pattern="yyyy/M/d" size="8" 
+                                        value="#{provinciasMB.finicial}">
+                                <p:ajax event="dateSelect" listener="#{provinciasMB.onFInicialSelect}" update="eventoTable" />
+                            </p:calendar>                                                   
+                            <h:outputLabel id="ffinal" value="Fecha hasta:" ></h:outputLabel>
+                            <p:calendar required="false" pattern="yyyy/M/d" size="8" 
+                                        value="#{provinciasMB.ffinal}">
+                                <p:ajax event="dateSelect" listener="#{provinciasMB.onFFinalSelect}" update="eventoTable" />
+                            </p:calendar>                                                                                                                                
+                            <p:commandButton icon="ui-icon-refresh" actionListener="#{provinciasMB.clearSearch}" 
+                                             update="eventoTable ffinal finicial cantones provincias eventotipo" onclick="calendarWidget.setDate(null)">
+                                <p:resetInput target="#{provinciasMB.ffinal}" />
+                            </p:commandButton>              
+                            
+                 </p:fieldset>
+                <p:fieldset>   
+                    <p:dataTable id="eventoTable" value="#{provinciasMB.eventos}" var="evento" 
+                                 paginator="true" rows="10" rowKey="#{evento.idevento}"
+                                 selection="#{provinciasMB.evento}" selectionMode="single" rowIndexVar="rowIndex">
+                        <p:ajax event="rowSelect" listener="#{provinciasMB.onRowSelect}" />                        
+                        <p:column headerText="evento" width="20%">
+                            <p:outputLabel value="#{evento.evento}"></p:outputLabel>
+                        </p:column>
+                        <p:column headerText="provincia" width="30%">
+                            <p:outputLabel value="#{evento.provincia}"></p:outputLabel>
+                        </p:column>
+                        <p:column headerText="canton" width="30%">
+                            <p:outputLabel value="#{evento.canton}"></p:outputLabel>
+                        </p:column>
+                        <p:column headerText="fecha" width="20%">
+                            <p:outputLabel value="#{evento.fecha}"></p:outputLabel>
+                        </p:column>                        
+                    </p:dataTable>
+                </p:fieldset>
+            </h:form>       
+    </h:body>
+</html>
+

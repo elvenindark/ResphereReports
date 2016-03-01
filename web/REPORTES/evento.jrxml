@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c4dfac75-457e-4a21-8eb8-9234490e7be4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idevento" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     *
+FROM
+     v_rptevento
+WHERE
+	idevento = $P{idevento}]]>
+	</queryString>
+	<field name="idevento" class="java.lang.String"/>
+	<field name="descripcion" class="java.lang.String"/>
+	<field name="efectos" class="java.lang.String"/>
+	<field name="amenazas" class="java.lang.String"/>
+	<field name="fecha" class="java.lang.String"/>
+	<field name="hora" class="java.lang.String"/>
+	<field name="provincia" class="java.lang.String"/>
+	<field name="canton" class="java.lang.String"/>
+	<field name="parroquia" class="java.lang.String"/>
+	<field name="tipo" class="java.lang.String"/>
+	<field name="sector" class="java.lang.String"/>
+	<field name="distancia" class="java.math.BigDecimal"/>
+	<field name="tiempo" class="java.math.BigDecimal"/>
+	<field name="referencia" class="java.lang.String"/>
+	<field name="longitud" class="java.lang.Double"/>
+	<field name="latitud" class="java.lang.Double"/>
+	<field name="altitud" class="java.lang.Double"/>
+	<field name="evento" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="60" y="2" width="100" height="20" uuid="3d28c33a-6968-4a6e-a92a-f71d11eda758"/>
+				<text><![CDATA[idevento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="232" y="2" width="100" height="20" uuid="caee4751-08cf-4db7-b2c7-82ccab49dbe5"/>
+				<text><![CDATA[fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="376" y="2" width="100" height="20" uuid="c23ffb94-d391-41d1-8a68-254136f80d25"/>
+				<text><![CDATA[provincia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="528" y="2" width="100" height="20" uuid="14d12ed2-aee6-4830-9cfd-821776b2dbbd"/>
+				<text><![CDATA[descripcion]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="60" y="28" width="100" height="20" uuid="fccd7f6e-9cc1-4f9d-9556-592654c42224"/>
+				<textFieldExpression><![CDATA[$F{idevento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="232" y="23" width="100" height="20" uuid="806cf109-39ad-4770-810d-0189c2c92d9f"/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="376" y="26" width="100" height="20" uuid="d6868af6-9b2e-4099-a4a9-bd4fdf525d39"/>
+				<textFieldExpression><![CDATA[$F{provincia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="528" y="19" width="100" height="20" uuid="e3377b27-a267-416e-98d2-db6092321cde"/>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

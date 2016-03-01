@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DaniosServInfra" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ac769bb2-da70-4c81-b739-307d9e49d484">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idevento" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT *
+FROM v_rptdanioserviciosinfra where idevento = $P{idevento}]]>
+	</queryString>
+	<field name="idevento" class="java.lang.String"/>
+	<field name="idtiposervicio" class="java.lang.String"/>
+	<field name="idtipodano" class="java.lang.String"/>
+	<field name="tiposervicio" class="java.lang.String"/>
+	<field name="sifunciona" class="java.lang.String"/>
+	<field name="tipodano" class="java.lang.String"/>
+	<field name="siaplica" class="java.lang.String"/>
+	<field name="observacion" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="22" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-11" y="4" width="811" height="18" forecolor="#006699" backcolor="#006699" uuid="615b7d28-5372-4e61-afd1-7fc52b8dd47e"/>
+				<staticText>
+					<reportElement x="11" y="0" width="489" height="18" forecolor="#FFFFFF" uuid="7164ef09-9bd2-488e-b624-cc48e2bf21b8"/>
+					<textElement textAlignment="Left">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[DAÑOS EN SERVICIOS Y OTRAS INFRAESTRUCTURAS]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="7" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="8" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="21" width="179" height="20" uuid="bbfd1f7a-224a-44f2-a9d3-01a48bd6c09f"/>
+				<textFieldExpression><![CDATA[$F{tiposervicio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="110" height="20" uuid="449173ef-8c8d-4ee1-bd05-a3f11166c616"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[INFRAESTRUCTURA]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="179" y="21" width="100" height="20" uuid="34e69930-4c96-4e11-ae6e-5679225729f6"/>
+				<textFieldExpression><![CDATA[$F{sifunciona}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="179" y="0" width="100" height="20" uuid="7c2d182a-03da-47c3-8818-9237253beec2"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FUNCIONA SI / NO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="279" y="21" width="100" height="20" uuid="8d4eda7a-8854-42a6-94ac-608227cc400e"/>
+				<textFieldExpression><![CDATA[$F{tipodano}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="279" y="0" width="100" height="20" uuid="24d29d06-5646-4301-b557-ac18002c6b14"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPO DE DAÑO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="379" y="21" width="100" height="20" uuid="f95c13dc-8b93-40d0-a620-86a21addd55b"/>
+				<textFieldExpression><![CDATA[$F{siaplica}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="379" y="0" width="100" height="20" uuid="6a832b10-1fae-4f82-8c53-dfb91a34a6bf"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[APLICA SI / NO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="479" y="21" width="100" height="20" uuid="8c65cac8-2bd4-4baa-b075-4acf557e6cd8"/>
+				<textFieldExpression><![CDATA[$F{observacion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="479" y="0" width="100" height="20" uuid="8a0b9cb7-6ecc-4e0d-94ec-276018000f7f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[OBSERVACIÓN]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="9" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="7" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="afectacionMediosVida" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a7620c2e-6521-481b-972b-58cc8b5d461d">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="testbdd"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idevento" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT *
+FROM v_rptafecmediosvida where idevento = $P{idevento}]]>
+	</queryString>
+	<field name="idevento" class="java.lang.String"/>
+	<field name="idtipomediovida" class="java.lang.String"/>
+	<field name="idtipodano" class="java.lang.String"/>
+	<field name="tipomediovida" class="java.lang.String"/>
+	<field name="hombres" class="java.lang.String"/>
+	<field name="mujeres" class="java.lang.String"/>
+	<field name="tipodano" class="java.lang.String"/>
+	<field name="siaplica" class="java.lang.String"/>
+	<field name="observacion" class="java.lang.String"/>
+	<variable name="tipomediovida1" class="java.lang.Integer" resetType="Column" calculation="DistinctCount">
+		<variableExpression><![CDATA[$F{tipomediovida}]]></variableExpression>
+	</variable>
+	<group name="idevento">
+		<groupExpression><![CDATA[$F{idevento}]]></groupExpression>
+	</group>
+	<group name="idtipomediovida">
+		<groupExpression><![CDATA[$F{idtipomediovida}]]></groupExpression>
+	</group>
+	<group name="idtipodano">
+		<groupExpression><![CDATA[$F{idtipodano}]]></groupExpression>
+	</group>
+	<group name="tipomediovida">
+		<groupExpression><![CDATA[$F{tipomediovida}]]></groupExpression>
+	</group>
+	<group name="hombres">
+		<groupExpression><![CDATA[$F{hombres}]]></groupExpression>
+	</group>
+	<group name="mujeres">
+		<groupExpression><![CDATA[$F{mujeres}]]></groupExpression>
+	</group>
+	<group name="tipodano">
+		<groupExpression><![CDATA[$F{tipodano}]]></groupExpression>
+	</group>
+	<group name="siaplica">
+		<groupExpression><![CDATA[$F{siaplica}]]></groupExpression>
+	</group>
+	<group name="observacion">
+		<groupExpression><![CDATA[$F{observacion}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="27" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-11" y="4" width="791" height="18" forecolor="#006699" backcolor="#006699" uuid="44015dd1-d6b8-4675-9c91-8b8489cd0fb6"/>
+				<staticText>
+					<reportElement x="11" y="0" width="190" height="18" forecolor="#FFFFFF" uuid="e7c6154a-3a8d-472c-b7d3-37b5e48d546b"/>
+					<textElement textAlignment="Left">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[AFECTACIÓN MEDIOS DE VIDA]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="4" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="180" y="0" width="100" height="20" uuid="8012f786-50eb-400f-bf98-253b65d406b7"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[HOMBRES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="6150b72d-4456-4614-a323-fbab35962fd5"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[MEDIOS DE VIDA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="1" width="100" height="20" uuid="a259ccc2-4224-4ce6-bd00-e5ac1dc8dfea"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[MUJERES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="0" width="100" height="20" uuid="549e0988-f60f-40f8-855c-ba79f2feb241"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPO DE DANO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="0" width="100" height="20" uuid="8b7e1b80-00ac-47d1-bfa3-92e95a4318e7"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[APLICA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="580" y="0" width="100" height="20" uuid="e7f93b80-e09f-4452-b1c7-a92800748797"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[OBSERVACION]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="180" y="0" width="100" height="20" uuid="294a2a66-8a61-4daa-846f-305a7c4e4fcb"/>
+				<textFieldExpression><![CDATA[$F{hombres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="6b53bf36-b513-4ff4-9c99-3fbac12ea803"/>
+				<textFieldExpression><![CDATA[$F{tipomediovida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="0" width="100" height="20" uuid="28126b58-28b6-4c50-8fcb-9efdcbd87ec7"/>
+				<textFieldExpression><![CDATA[$F{mujeres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="0" width="100" height="20" uuid="0f374155-b3bb-4bed-a6b1-273429d35763"/>
+				<textFieldExpression><![CDATA[$F{tipodano}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="0" width="100" height="20" uuid="e7d41771-05f8-4257-b2a0-3b8806e48da8"/>
+				<textFieldExpression><![CDATA[$F{siaplica}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="580" y="0" width="100" height="20" uuid="c7c0e8e9-eb74-4384-a6e9-1186ed7f24be"/>
+				<textFieldExpression><![CDATA[$F{observacion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="12" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="13" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="12" splitType="Stretch"/>
+	</summary>
+</jasperReport>
